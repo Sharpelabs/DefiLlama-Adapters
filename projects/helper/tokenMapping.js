@@ -58,7 +58,7 @@ const fixBalancesTokens = {
   core: {
     '0x1281E326C6e4413A98DafBd0D174a4Ae07ff4223': { coingeckoId: "zeepr", decimals: 18, },
     '0x8034ab88c3512246bf7894f57c834dddbd1de01f': { coingeckoId: "bitcoin", decimals: 8 },
-    '0x40375C92d9FAf44d2f9db9Bd9ba41a3317a2404f': { coingeckoId: "wcore", decimals: 18}
+    [ADDRESSES.core.WCORE]: { coingeckoId: "wcore", decimals: 18}
   },
   bsc: {
     '0x55CBAC75C1af769eB7FD37d27A5cb6437EB29abB': { coingeckoId: "zeepr", decimals: 18, },
@@ -86,7 +86,7 @@ const fixBalancesTokens = {
     '0x4dcb91cc19aadfe5a6672781eb09abad00c19e4c': { coingeckoId: "sats-ordinals", decimals: 18, },
     '0x69181a1f082ea83a152621e4fa527c936abfa501': { coingeckoId: "rats", decimals: 18, },
     '0x0726523eba12edad467c55a962842ef358865559': { coingeckoId: "ordinals", decimals: 18, },
-    '0x0000000000000000000000000000000000000000': { coingeckoId: "bitcoin", decimals: 18, },
+    [ADDRESSES.null]: { coingeckoId: "bitcoin", decimals: 18, },
     '0x967aec3276b63c5e2262da9641db9dbebb07dc0d': { coingeckoId: "tether", decimals: 6, },
     '0x6b4ecada640f1b30dbdb68f77821a03a5f282ebe': { coingeckoId: "usd-coin", decimals: 6, },
   },
@@ -102,20 +102,20 @@ const fixBalancesTokens = {
     "0x13A0c5930C028511Dc02665E7285134B6d11A5f4": { decimals: 18, coingeckoId: "bitcoin" }
   },
   ancient8: {
-    '0x4200000000000000000000000000000000000006': { coingeckoId: "ethereum", decimals: 18, },
+    [ADDRESSES.optimism.WETH_1]: { coingeckoId: "ethereum", decimals: 18, },
   },
   mode: {
     '0x80137510979822322193fc997d400d5a6c747bf7': { coingeckoId: "stakestone-ether", decimals: 18 },
   },
   zklink: {
-    '0x0000000000000000000000000000000000000000': { coingeckoId: "ethereum", decimals: 18, },
+    [ADDRESSES.null]: { coingeckoId: "ethereum", decimals: 18, },
     '0xda4aaed3a53962c83b35697cd138cc6df43af71f': { coingeckoId: "wrapped-bitcoin", decimals: 8, },
     '0x2f8a25ac62179b31d62d7f80884ae57464699059': { coingeckoId: "tether", decimals: 6, },
     '0x1a1a3b2ff016332e866787b311fcb63928464509': { coingeckoId: "usd-coin", decimals: 6, },
   },
   bsquared: {
-    '0x0000000000000000000000000000000000000000': { coingeckoId: "bitcoin", decimals: 18, },
-    '0x4200000000000000000000000000000000000006': { coingeckoId: "bitcoin", decimals: 18, },
+    [ADDRESSES.null]: { coingeckoId: "bitcoin", decimals: 18, },
+    [ADDRESSES.optimism.WETH_1]: { coingeckoId: "bitcoin", decimals: 18, },
     '0x681202351a488040fa4fdcc24188afb582c9dd62': { coingeckoId: "tether", decimals: 6, },
     '0xe544e8a38add9b1abf21922090445ba93f74b9e5': { coingeckoId: "usd-coin", decimals: 6, },
   },

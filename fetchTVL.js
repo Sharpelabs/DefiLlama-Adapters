@@ -93,15 +93,19 @@ function mergeBalances(key, storedKeys, balancesObject) {
 //   process.exit(1);
 // }
 
-const directoryPath = '/home/ubuntu/DefiLlama-Adapters/projects/'
-const pathFiles = fs.readdirSync(directoryPath);
-const files = pathFiles.filter(file => fs.statSync(path.join(directoryPath, file)).isDirectory());
+// const directoryPath = '/home/ubuntu/DefiLlama-Adapters/projects/'
+// const pathFiles = fs.readdirSync(directoryPath);
+// const files = pathFiles.filter(file => fs.statSync(path.join(directoryPath, file)).isDirectory());
+
+// Import the JSON file
+const ADAPTORS = require('./adapters.json');
 
 (async () => {
-for (let i = 14; i < 100; i++) {
-  var project = files[i];
-  console.log(project);
-  const passedFile = `${process.cwd()}/projects/${project}/index.js`;
+for (let i = 10; i < 100; i++) {
+  var projectData = ADAPTORS[i];
+  var symbol = projectData.symbol;
+  console.log(symbol);
+  const passedFile = `${process.cwd()}/projects/${projectData.module}`;
   const originalCall = sdk.api.abi.call
   sdk.api.abi.call = async (...args) => {
     try {
@@ -203,10 +207,9 @@ for (let i = 14; i < 100; i++) {
       }
     });
     if (usdTvls.tvl === undefined) {
-      // throw new Error(
-      //   "Protocol doesn't have total tvl, make sure to export a tvl key either on the main object or in one of the chains"
-      // );
-      console.log("Protocol doesn't have total tvl, make sure to export a tvl key either on the main object or in one of the chains")
+      throw new Error(
+        "Protocol doesn't have total tvl, make sure to export a tvl key either on the main object or in one of the chains"
+      );
     }
 
     // Object.entries(usdTokenBalances).forEach(([chain, balances]) => {
@@ -227,7 +230,7 @@ for (let i = 14; i < 100; i++) {
     //   }
     // });
     // console.log("\ntotal".padEnd(25, " "), humanizeNumber(usdTvls.tvl), "\n");
-    await couchClient.insert(`defi-tvl/${project}`, {usdTokenBalances: usdTokenBalances, usdTvls: usdTvls});
+    await couchClient.insert(`defi-tvl/${symbol}`, {usdTokenBalances: usdTokenBalances, usdTvls: usdTvls});
     new Promise(resolve => setTimeout(resolve, 5000));
   }
   await preExit()

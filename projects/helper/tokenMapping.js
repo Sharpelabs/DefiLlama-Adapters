@@ -35,9 +35,12 @@ const ibcMappings = {
 }
 
 const fixBalancesTokens = {
+  optimism: {
+    '0xD9cC3D70E730503E7f28c1B407389198c4B75FA2': { coingeckoId: "tlx", decimals: 18, },
+  },
   ancient8: {
     [ADDRESSES.nul]: { coingeckoId: "ethereum", decimals: 18, },
-    '0x4200000000000000000000000000000000000006': { coingeckoId: "ethereum", decimals: 18, },
+    [ADDRESSES.optimism.WETH_1]: { coingeckoId: "ethereum", decimals: 18, },
   },
   area: {
     '0x1d1bc800e71576a59f9ef88bb679fa13c2e10abf': { coingeckoId: 'areon-network', decimals: 18, },
@@ -61,7 +64,7 @@ const fixBalancesTokens = {
   },
   core: {
     '0x1281E326C6e4413A98DafBd0D174a4Ae07ff4223': { coingeckoId: "zeepr", decimals: 18, },
-    '0x8034ab88c3512246bf7894f57c834dddbd1de01f': { coingeckoId: "bitcoin", decimals: 8 },
+    [ADDRESSES.core.coreBTC]: { coingeckoId: "bitcoin", decimals: 8 },
   },
   bsc: {
     '0x55CBAC75C1af769eB7FD37d27A5cb6437EB29abB': { coingeckoId: "zeepr", decimals: 18, },
@@ -156,6 +159,14 @@ const fixBalancesTokens = {
     PHA: { coingeckoId: "pha", decimals: 12 },
     KINT: { coingeckoId: "kintsugi", decimals: 12 },
     KBTC: { coingeckoId: "kintsugi-btc", decimals: 8 },
+  },
+  bob: {
+    [ADDRESSES.null]: { coingeckoId: "ethereum", decimals: 18, },
+    [ADDRESSES.optimism.WETH_1]: { coingeckoId: "ethereum", decimals: 18, },
+    '0x03c7054bcb39f7b2e5b2c7acb37583e32d70cfa3': { coingeckoId: "wrapped-bitcoin", decimals: 8, },
+    '0x05d032ac25d322df992303dca074ee7392c117b9': { coingeckoId: "tether", decimals: 6, },
+    '0xe75d0fb2c24a55ca1e3f96781a2bcc7bdba058f0': { coingeckoId: "usd-coin", decimals: 6, },
+    '0xbba2ef945d523c4e2608c9e1214c2cc64d4fc2e2': { coingeckoId: "tbtc", decimals: 18, },
   }
 }
 

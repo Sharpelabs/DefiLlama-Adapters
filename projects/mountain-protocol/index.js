@@ -1,5 +1,4 @@
 const ADDRESSES = require('../helper/coreAssets.json')
-const sdk = require("@defillama/sdk");
 const MOUNTAIN_PROTOCOL_CONTRACT = ADDRESSES.ethereum.USDM;
 
 async function tvl(api) {

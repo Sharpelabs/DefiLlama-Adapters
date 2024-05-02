@@ -113,9 +113,9 @@ function mergeBalances(key, storedKeys, balancesObject) {
 //   process.exit(1);
 // }
 
-// const directoryPath = '/home/ubuntu/DefiLlama-Adapters/projects/'
-// const pathFiles = fs.readdirSync(directoryPath);
-// const files = pathFiles.filter(file => fs.statSync(path.join(directoryPath, file)).isDirectory());
+  // const directoryPath = '/home/ubuntu/DefiLlama-Adapters/projects/'
+  // const pathFiles = fs.readdirSync(directoryPath);
+  // const files = pathFiles.filter(file => fs.statSync(path.join(directoryPath, file)).isDirectory());
 
 // Import the JSON file
 const ADAPTORS = require("./adapters.json");
